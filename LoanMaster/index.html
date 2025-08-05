@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LoanMaster</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="calculator">
+        <div class="calculator-header">
+          <h2>LoanMaster</h2>
+          <p class="subtitle">
+             Get clear insights into your monthly payments and total loan cost instantly.
+          </p>
+        </div>
+
+        <div class="calculator-body">
+          <div class="input-section">
+            <div class="input-group">
+              <label for="amount">Loan Amount (₹)</label>
+              <input type="number" id="amount" placeholder="e.g., 250000" />
+              <span class="input-icon">₹</span>
+            </div>
+            <div class="input-group">
+              <label for="interest">Annual Interest Rate (%)</label>
+              <input
+                type="number"
+                id="interest"
+                step="0.1"
+                placeholder="e.g., 5.5"
+              />
+              <span class="input-icon">%</span>
+            </div>
+            <div class="input-group">
+              <label for="years">Loan Term (Years)</label>
+              <input type="number" id="years" placeholder="e.g., 30" />
+              <span class="input-icon">Yrs</span>
+            </div>
+            <button id="calculateBtn">
+              Calculate Loan <span class="button-icon">→</span>
+            </button>
+          </div>
+
+          <div class="results" id="results">
+           <h3>Loan Summary</h3>
+            <div class="result-grid">
+             <div class="result-item">
+               <span class="result-label">Monthly Payment</span>
+               <span class="result-value" id="monthly">₹0.00</span>
+              </div>
+            <div class="result-item">
+             <span class="result-label">Total Payment</span>
+             <span class="result-value" id="total">₹0.00</span>
+            </div>
+           <div class="result-item">
+            <span class="result-label">Total Interest</span>
+            <span class="result-value" id="totalInterest">₹0.00</span>
+          </div>
+         </div>
+          <div class="chart-section">
+           <h3>Payment Breakdown</h3>
+           <div class="chart-wrapper">
+           <canvas id="loanChart"></canvas>
+           </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
